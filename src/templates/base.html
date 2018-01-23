@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <title>{% block head_title %}MuyPicky.com{% endblock %}</title>
+{% include 'snippets/css.html' %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,15 +10,13 @@
     <title>Document</title>
 </head>
 <body>
-<h1>MuyPicky.com</h1>
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/contact/">Contact</a>
 
-<dic class="container">
+{% include 'snippets/nav.html' %}
+<div class="container">
     {% block content %}
 
     {% endblock %}
-</dic>
+</div>
+{% include 'snippets/js.html' %}
 </body>
 </html>
