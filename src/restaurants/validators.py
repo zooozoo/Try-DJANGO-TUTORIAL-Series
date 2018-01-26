@@ -2,11 +2,12 @@ from django.core.exceptions import ValidationError
 
 
 def validtae_even(value):
-    if value % 2 !=0:
+    if value % 2 != 0:
         raise ValidationError(
             '%(value)s is not an even number',
             params={'value': value},
         )
+
 
 def validate_email(value):
     email = value
