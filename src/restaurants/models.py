@@ -4,6 +4,7 @@ from django.db import models
 
 # Create your models here.
 from django.db.models.signals import pre_save
+from django.urls import reverse
 
 from restaurants.utils import unique_slug_generator
 from restaurants.validators import validate_category
@@ -22,6 +23,9 @@ class RestaurantLocation(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('restaurants:detail', kwargs={'slug': self.slug})
 
     @property
     def title(self):
