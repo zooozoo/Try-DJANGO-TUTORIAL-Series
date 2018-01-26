@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
-{% block head_title %}Add Restaurant | {{ block.super }}{% endblock %}
+{% block head_title %}{{ title }} | {{ block.super }}{% endblock %}
 
 {% block content %}
-    <h1>Add Restaurant</h1>
+    <h1>{{ title }}</h1>
 
     {% if form.errors.non_field_errors %}
         {{ form.errors.non_field_errors }}
