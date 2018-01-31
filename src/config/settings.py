@@ -29,6 +29,17 @@ DEBUG = True
 LOGOUT_REDIRECT_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 
+EMAIL_HOST = 'smtp.naver.com'
+EMAIL_HOST_USER = 'shz0309@naver.com'
+EMAIL_HOST_PASSWORD = 'gjswn1'
+MAIL_PORT = 456
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'shz <shz0309@naver.com>'
+
+ADMINS = (
+    ('You', 'you@email.com')
+)
+MANAGERS = ADMINS
 
 ALLOWED_HOSTS = []
 
