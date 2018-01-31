@@ -5,13 +5,23 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
 from django.views import View
-from django.views.generic import DetailView
+from django.views.generic import DetailView, CreateView
 
 from menus.models import Item
+from profiles.forms import RegisterForm
 from profiles.models import Profile
 from restaurants.models import RestaurantLocation
 
 User = get_user_model()
+
+
+class RegisterView(CreateView):
+    form_class = RegisterForm
+    template_name = 'registration/register.html'
+    success_url = '/'
+
+    def dispatch(self, request, *args, **kwargs):
+        return super(RegisterView, self).dispatch(*args, **kwargs)
 
 
 class ProfileFollowToggle(LoginRequiredMixin, View):
